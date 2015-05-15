@@ -3,6 +3,7 @@
 var config = require('./configuration'),
     heartbeat = require('./routes/heartbeat'),
     producer = require('./routes/producer'),
+    solution = require('./routes/solution'),
     nconf = require('nconf'),
     restify = require('restify'),
     environment = nconf.get('NODE:ENV') || 'production';
@@ -22,9 +23,7 @@ server.get('/heartbeat', heartbeat.index);
 server.post('/produce', producer.generateExpression);
 
 // log solution reported
-server.get('/solution', function(req, res, next) {
-    next();
-});
+server.post('/solution', solution.record);
 
 server.listen({
         port: config.get('restify:port'),
