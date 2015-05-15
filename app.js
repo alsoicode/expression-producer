@@ -12,6 +12,9 @@ var server = restify.createServer({
     name: config.get('application:name')
 });
 
+// middleware
+server.use(restify.bodyParser());
+
 // Heartbeat
 server.get('/heartbeat', heartbeat.index);
 
