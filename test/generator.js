@@ -26,12 +26,9 @@ describe('Random Number Generator', function() {
                     max: 1
                 },
                 randomInts = getRandomInts(options);
-            assert.equal(randomInts.length, 2);
 
-            // assert integers are below the maximum default of 100
-            for (var i=0; i<randomInts.length; i++) {
-                assert(randomInts[i] < options.max);
-            }
+            // min / max should now be transposed
+            assert(options.min < options.max);
         });
     });
 });
