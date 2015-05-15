@@ -1,0 +1,12 @@
+{
+    "application": {
+        "name": "Expression-Producer"
+    },
+    "restify": {
+        "port": 8080
+    },
+    "logger": {
+        "filename": "logs/run.log",
+        "level": "silly"
+    }
+}
