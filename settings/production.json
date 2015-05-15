@@ -3,6 +3,7 @@
         "name": "Expression-Producer"
     },
     "restify": {
+        "host": "",
         "port": 8080
     },
     "logger": {
