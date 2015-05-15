@@ -1,3 +1,5 @@
+'use strict';
+
 var app = require('../app'),
     request = require('supertest');
 
@@ -18,5 +20,5 @@ describe('Expression Producer Heartbeat', function() {
                 .get('/missing')
                 .expect(404, done);
         });
-    })
+    });
 });

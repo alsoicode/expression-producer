@@ -1,3 +1,5 @@
+'use strict';
+
 var nconf = require('nconf'),
     env = require('dotenv').load();
 
