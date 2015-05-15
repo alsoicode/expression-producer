@@ -18,6 +18,11 @@ server.get('/heartbeat', heartbeat.index);
 // expression producer
 server.post('/produce', producer.generateExpression);
 
+// log solution reported
+server.get('/solution', function(req, res, next) {
+    next();
+});
+
 server.listen({
         port: config.get('restify:port'),
         host: config.get('restify:host')
