@@ -5,7 +5,6 @@ var config = require('./configuration'),
     producer = require('./routes/producer'),
     nconf = require('nconf'),
     restify = require('restify'),
-    util = require('util'),
     environment = nconf.get('NODE:ENV') || 'production';
 
 
