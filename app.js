@@ -2,6 +2,7 @@
 
 var config = require('./configuration'),
     heartbeat = require('./routes/heartbeat'),
+    producer = require('./routes/producer'),
     nconf = require('nconf'),
     restify = require('restify'),
     util = require('util'),
@@ -14,6 +15,9 @@ var server = restify.createServer({
 
 // Heartbeat
 server.get('/heartbeat', heartbeat.index);
+
+// expression producer
+server.post('/produce', producer.generateExpression);
 
 server.listen({
         port: config.get('restify:port'),
