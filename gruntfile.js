@@ -1,5 +1,9 @@
+var config = require('./configuration'),
+    port = config.get('restify:port');
+
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cafe-mocha');
+    grunt.loadNpmTasks('grunt-api-benchmark');
     grunt.loadNpmTasks('grunt-env');
 
     grunt.initConfig({
@@ -16,8 +20,19 @@ module.exports = function(grunt) {
                     reporter: 'nyan'
                 }
             }
+        },
+        api_benchmark: {
+            api: {
+                options: {
+                    output: 'generated',
+                },
+                files: {
+                    'output.html': 'benchmark/config.json'
+                }
+            }
         }
     });
 
     grunt.registerTask('test', ['env:test', 'cafemocha:test']);
+    grunt.registerTask('benchmark', ['api_benchmark']);
 };
