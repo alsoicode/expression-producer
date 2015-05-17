@@ -3,7 +3,7 @@
 A ReSTful Node.js service written in [Restify]([Restify](http://mcavage.me/node-restify/)) that produces a randmly generated addition expression to be evaluated by a consumer, such as 1+1=
 
 ## Requirements
- - [Node.js and npm](https://nodejs.org/)
+ - [Node.js v0.12.x and npm](https://nodejs.org/)
  - [Grunt](http://gruntjs.com/) for running tests
  - [nodemon](https://github.com/remy/nodemon) (optional)
 
@@ -60,3 +60,16 @@ Endpoint for reporting the solution to an expression.
 ## Tests
 
 Tests are written BDD-style with [Mocha](http://mochajs.org/) and [Supertest](https://github.com/visionmedia/supertest) and can be run using Grunt: `$ grunt test`
+
+## Benchmarking
+
+Benchmarking is available as a Grunt task: `$ grunt benchmark`. Results are generated in HTML format and may be found in the `/generated/output.html` file, viewable in a web browser.
+
+To run the benchmarks, you must first run the server:
+
+    $ node app.js
+
+then, in a separate terminal tab or window, run the benchmark task:
+
+    $ cd to application
+    $ grunt benchmark
