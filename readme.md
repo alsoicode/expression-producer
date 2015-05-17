@@ -73,3 +73,11 @@ then, in a separate terminal tab or window, run the benchmark task:
 
     $ cd to application
     $ grunt benchmark
+
+## Diagrams
+UML diagrams for activity and sequence are located in the `./diagrams` directory:
+ 
+ - expression-producer-activity.html
+ - expression-producer-sequence.html
+
+and are viewable via your web browser.
