@@ -1,0 +1,27 @@
+{
+    "service": {
+        "Expression Producer API": "http://localhost:3000"
+    },
+    "endpoints": {
+        "producer": {
+            "route": "/produce",
+            "method": "post",
+            "expectedStatusCode": 201
+        },
+        "report": {
+            "route": "/report",
+            "method": "post",
+            "data": {
+                "expression": "1+1=",
+                "solution": 2
+            },
+            "expectedStatusCode": 201
+        }
+    },
+    "options": {
+        "debug": true,
+        "minSamples": 2000,
+        "output": "generated",
+        "runMode": "parallel"
+    }
+}
