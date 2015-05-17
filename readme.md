@@ -37,7 +37,7 @@ Endpoint for generating an addition expression.
 
 ##### Returns
  - Status Code: 201
- - Response: {"expression": "1+1="}
+ - Response: `{"expression": "1+1="}`
  - Content-Type: JSON
 
 ***
@@ -51,7 +51,7 @@ Endpoint for reporting the solution to an expression.
 
 ##### Returns
  - Status Code: 201
- - Response: {"solution-recorded": true}
+ - Response: `{"solution-recorded": true, "expression": "25+65=", "solution": 90}`
  - Content-Type: JSON
 
 ## Tests

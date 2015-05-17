@@ -15,7 +15,7 @@ exports.report = function(req, res, next) {
             solution = req.body.solution;
 
         logger.log('info', 'Expression %s sent. Solution %s received.', expression, solution);
-        res.json(201, {'solution-recorded': true});
+        res.json(201, {'solution-recorded': true, 'expression': expression, 'solution': solution});
     }
 
     next();
