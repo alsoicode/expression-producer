@@ -13,6 +13,9 @@ A ReSTful Node.js service written in Restify that produces an addition expressio
  - install dependencies via npm: `$ npm install`
  - Create a `.env` file in the project root to set up your local Node environment variable with the following contents: `NODE_ENV=local`
 
+## Configuration
+The only option you may need to configure is the Restify server port, located in `settings/local.json`. By default this port is set to `3000`.
+
 ## Running the server
  - via nodemon: `$ nodemon app.js`
  - via node: `$ node app.js`
