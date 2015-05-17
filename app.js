@@ -1,6 +1,7 @@
 'use strict';
 
 var config = require('./configuration'),
+    cluster = require('cluster'),
     heartbeat = require('./routes/heartbeat'),
     producer = require('./routes/producer'),
     solution = require('./routes/solution'),
@@ -9,30 +10,45 @@ var config = require('./configuration'),
     environment = nconf.get('NODE:ENV') || 'production';
 
 
-var server = restify.createServer({
-    name: config.get('application:name')
-});
+// only cluster if not testing
+if (cluster.isMaster && environment != 'test') {
+    var cpuCount = require('os').cpus().length;
 
-// middleware
-server.use(restify.bodyParser());
+    for (var i = 0; i < cpuCount; i++) {
+        cluster.fork();
+    }
 
-// Heartbeat
-server.get('/heartbeat', heartbeat.index);
+    cluster.on('exit', function(worker) {
+        cluster.fork();
+    });
+}
+else {
 
-// expression producer
-server.post('/produce', producer.generateExpression);
+    var server = restify.createServer({
+        name: config.get('application:name')
+    });
 
-// log solution reported
-server.post('/report', solution.report);
+    // middleware
+    server.use(restify.bodyParser());
 
-server.listen({
-        port: config.get('restify:port'),
-        host: config.get('restify:host')
-    },
-    function() {
-        var host = server.address().address,
-            port = server.address().port;
-        console.log('%s starting up at %s:%s using "%s" environment.', server.name, host, port, environment);
-});
+    // Heartbeat
+    server.get('/heartbeat', heartbeat.index);
+
+    // expression producer
+    server.post('/produce', producer.generateExpression);
+
+    // log solution reported
+    server.post('/report', solution.report);
+
+    server.listen({
+            port: config.get('restify:port'),
+            host: config.get('restify:host')
+        },
+        function() {
+            var host = server.address().address,
+                port = server.address().port;
+            console.log('%s starting up at %s:%s using "%s" environment.', server.name, host, port, environment);
+    });
+}
 
 module.exports = server;
