@@ -1,6 +1,6 @@
 # Expression Producer
 
-A ReSTful Node.js service written in Restify that produces a randmly generated addition expression to be evaluated by a consumer, such as 1+1=
+A ReSTful Node.js service written in [Restify]([Restify](http://mcavage.me/node-restify/)) that produces a randmly generated addition expression to be evaluated by a consumer, such as 1+1=
 
 ## Requirements
  - [Node.js and npm](https://nodejs.org/)
@@ -19,6 +19,8 @@ The only option you may need to configure is the Restify server port, located in
 ## Running the server
  - via nodemon: `$ nodemon app.js`
  - via node: `$ node app.js`
+
+With the default settings, the server will be running at: `localhost:3000`
 
 ## Endpoints
 
