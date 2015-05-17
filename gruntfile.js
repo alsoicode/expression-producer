@@ -1,6 +1,3 @@
-var config = require('./configuration'),
-    port = config.get('restify:port');
-
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-cafe-mocha');
     grunt.loadNpmTasks('grunt-api-benchmark');
