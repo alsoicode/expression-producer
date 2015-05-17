@@ -1,6 +1,6 @@
 # Expression Producer
 
-A ReSTful Node.js service written in [Restify]([Restify](http://mcavage.me/node-restify/)) that produces a randmly generated addition expression to be evaluated by a consumer, such as 1+1=
+A ReSTful Node.js service written in [Restify](http://mcavage.me/node-restify/) that produces a randmly generated addition expression to be evaluated by a consumer, such as 1+1=
 
 ## Requirements
  - [Node.js v0.12.x and npm](https://nodejs.org/)
