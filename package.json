@@ -12,9 +12,10 @@
     "winston": "^1.0.0"
   },
   "devDependencies": {
-    "supertest": "~0.15.0",
     "grunt": "~0.4.5",
+    "grunt-api-benchmark": "^0.1.2",
+    "grunt-cafe-mocha": "~0.1.13",
     "grunt-env": "~0.4.2",
-    "grunt-cafe-mocha": "~0.1.13"
+    "supertest": "~0.15.0"
   }
 }
