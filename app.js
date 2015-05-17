@@ -23,7 +23,7 @@ server.get('/heartbeat', heartbeat.index);
 server.post('/produce', producer.generateExpression);
 
 // log solution reported
-server.post('/solution', solution.record);
+server.post('/report', solution.report);
 
 server.listen({
         port: config.get('restify:port'),

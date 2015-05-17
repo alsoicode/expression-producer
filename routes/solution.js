@@ -2,18 +2,20 @@
 
 var logger = require('../logger');
 
-exports.record = function(req, res, next) {
+exports.report = function(req, res, next) {
     
     if (!req.body) {
-        res.json(400, {'error': 'Expression and Solution not present.'});
-        logger.log('info', 'bad request');
+        var msg = 'No request body present.';
+
+        res.json(400, {'error': msg});
+        logger.log('error', msg);
     }
     else {
         var expression = req.body.expression,
             solution = req.body.solution;
 
         logger.log('info', 'Expression %s sent. Solution %s received.', expression, solution);
-        res.json(200, {'solution-recorded': true});
+        res.json(201, {'solution-recorded': true});
     }
 
     next();
