@@ -3,12 +3,12 @@
 var logger = require('../logger');
 
 exports.report = function(req, res, next) {
-    
-    if (!req.body) {
-        var msg = 'No request body present.';
 
-        res.json(400, {'error': msg});
+    if (typeof req.body === 'undefined' || typeof req.body.expression === 'undefined' || typeof req.body.solution === 'undefned') {
+        var msg = 'Required parameters are missing.';
+
         logger.log('error', msg);
+        res.json(400, {'error': msg});
     }
     else {
         var expression = req.body.expression,
