@@ -1,7 +1,6 @@
 'use strict';
 
-var app = require('../app'),
-    assert = require('assert'),
+var assert = require('assert'),
     getRandomInts = require('../lib/generator');
 
 
