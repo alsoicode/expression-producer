@@ -16,6 +16,9 @@ A ReSTful Node.js service written in [Restify]([Restify](http://mcavage.me/node-
 ## Configuration
 The only option you may need to configure is the Restify server port, located in `settings/local.json`. By default this port is set to `3000`.
 
+## Logging
+To enable logging: `$ mkdir logs && touch logs/run.log`
+
 ## Running the server
  - via nodemon: `$ nodemon app.js`
  - via node: `$ node app.js`
