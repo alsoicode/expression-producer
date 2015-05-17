@@ -4,7 +4,7 @@ A ReSTful Node.js service written in [Restify](http://mcavage.me/node-restify/) 
 
 ## Requirements
  - [Node.js v0.12.x and npm](https://nodejs.org/)
- - [Grunt](http://gruntjs.com/) for running tests
+ - [Grunt](http://gruntjs.com/) for running tests and benchmarks
  - [nodemon](https://github.com/remy/nodemon) (optional)
 
 ## Installation
