@@ -9,7 +9,6 @@
     "dotenv": "^0.4.0",
     "nconf": "^0.7.1",
     "restify": "^3.0.2",
-    "string": "~3.0.0",
     "winston": "^1.0.0"
   },
   "devDependencies": {
